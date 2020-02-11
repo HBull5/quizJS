@@ -1,0 +1,17 @@
+{
+  "name": "quizjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "harcourt",
+  "license": "ISC",
+  "dependencies": {
+    "mocha": "^7.0.1"
+  }
+}
