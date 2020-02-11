@@ -1,35 +1,34 @@
 const results = document.getElementById('results');
 const submit = document.getElementById('submit');
 
-function longestWord() {
+function stringDetails() {
     let input = document.getElementById('input').value;
-    let words = input.split(" ");
-    let longest = 0;
-    let removed = [];
+    const words = input.split(' ');
+    let removedWords = words.filter(word => word.length < 4);
+    const remainders = words.filter(ele => !removedWords.includes(ele));
+
+    let max = 0;
+    let longStr = '';
     for(word of words) {
-        if(word.length < 4) {
-            if(word != ' ') {
-                removed.push(word);
-            }
-        } else if(word.length > longest) {
-            longest = word.length;
+        if(word.length > max) {
+            max = word.length;
+            longStr = word;
         }
     }
-    let removedChars = ``;
-    removed.forEach((word) => {
-        removedChars += `${word} `;
-    })
-    let remainder = ``;
-    // I dont like this but it works for the not destroying the original array :/
-    words.forEach((word) => {
-        if(!removed.includes(word)) {
-            remainder += `${word} `;
-        }
-    })
-    let response = `Longest No Chars: ${longest} Removed: ${removedChars} Remainding Text: ${remainder}`;
+
+    let response = `Original String: ${input} <br>`;
+    response += `Words under 4 chars: `;
+    for(removedWord of removedWords) {
+        response += `${removedWord} `;
+    }
+    response += `<br> Only chars 4 or greater: `;
+    for(remainder of remainders) {
+        response += `${remainder} `;
+    }
+    response += `<br> Longest String was ${longStr} with a char count of ${max}`;
     results.innerHTML = response;
 }
 
 submit.addEventListener('click', () => {
-    longestWord();
-});
+    stringDetails();
+})
