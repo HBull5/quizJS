@@ -9,7 +9,6 @@ function addition(x, y) {
         result.innerHTML = 'Invalid input! Try again!';
     } else {
         result.innerHTML = (Number(x) + Number(y)).toFixed(2);
-        return (Number(x) + Number(y)).toFixed(2);
     }
 }
 
@@ -18,7 +17,6 @@ function subtraction(x, y) {
         result.innerHTML = 'Invalid input! Try again!';
     } else {
         result.innerHTML = (Number(x) - Number(y)).toFixed(2);
-        return (Number(x) - Number(y)).toFixed(2);
     }
 }
 
@@ -27,7 +25,6 @@ function multiplication(x, y) {
         result.innerHTML = 'Invalid input! Try again!';
     } else {
         result.innerHTML = (Number(x) * Number(y)).toFixed(2);
-        return (Number(x) * Number(y)).toFixed(2);
     }
 }
 
@@ -38,7 +35,6 @@ function division(x, y) {
         result.innerHTML = 'You cannot divide by zero! Try again!';
     } else {
         result.innerHTML = (Number(x) / Number(y)).toFixed(2);
-        return (Number(x) / Number(y)).toFixed(2);
     }
 }
 
