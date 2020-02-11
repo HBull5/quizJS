@@ -1,5 +1,5 @@
 const assert = require('assert');
-const app = require('../problem1/app.js');
+const app = require('../problem1/test.js');
 
 describe('Problem #1 Testing', function() {
 
